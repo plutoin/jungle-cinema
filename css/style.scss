@@ -1,24 +1,7 @@
+@import "./mixin.scss";
+@import "./variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
-// color
-$border: #BDBDBD;
-$text-gray: #828282;
-$bg-color: #F2F2F2;
-
-// font-size
-$font13: 13px;
-$font16: 16px;
-$font14: 14px;
-
-// mixin
-@mixin flex-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-// Layout
 * {
   box-sizing: border-box;
 }
@@ -31,9 +14,9 @@ body {
 
 .container {
   @include flex-center;
+  @include border-2px;
   width: 1060px;
   padding: 41px 29px 31px;
-  border: 2px solid $border;
   background-color: $bg-color;
   border-radius: 10px;
 
@@ -49,11 +32,12 @@ body {
   nav {
     margin-top: 28px;
 
-    p {
+    a {
       display: inline-block;
       margin-right: 60px;
       color: $text-gray;
       font-weight: 500;
+      text-decoration: none;
 
       &:last-child {
         margin-right: 0;
@@ -66,6 +50,7 @@ body {
   }
 
   .cont-movie {
+    @include border-2px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 23px;
@@ -73,7 +58,6 @@ body {
     padding: 26px 27px 30px;
     margin-top: 31px;
     background-color: white;
-    border: 2px solid $border;
     border-radius: 10px;
 
     .item-movie {
@@ -88,11 +72,11 @@ body {
       line-height: 19px;
 
       img {
+        @include border-1px;
         display: block;
         margin: 19px 20px 0;
         width: 180px;
         height: 250px;
-        border: 1px solid $border;
         border-radius: 10px;
         filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
       }
@@ -116,6 +100,7 @@ body {
 
       dt {
         color: $text-gray;
+
         &:nth-child(5) {
           grid-column: 1/2;
         }
