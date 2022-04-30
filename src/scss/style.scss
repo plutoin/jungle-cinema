@@ -1,0 +1,201 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include flex-center;
+  margin-top: 85px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  @include flex-center;
+  @include border-2px;
+  width: 1060px;
+  padding: 41px 29px 31px;
+  background-color: $bg-color;
+  border-radius: 10px;
+
+  h1 {
+    width: 650px;
+    padding-bottom: 37px;
+    border-bottom: 2px solid $border;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  nav {
+    margin-top: 28px;
+
+    a {
+      display: inline-block;
+      margin-right: 60px;
+      color: $text-gray;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        color: black;
+      }
+    }
+  }
+
+  .cont-movie {
+    @include border-2px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+    width: 1003px;
+    padding: 26px 27px 30px;
+    margin-top: 31px;
+    background-color: white;
+    border-radius: 10px;
+
+    .item-movie {
+      position: relative;
+      width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid $border;
+      border-radius: 10px;
+      text-align: center;
+      font-size: $font13;
+      line-height: 19px;
+
+      img {
+        @include border-1px;
+        display: block;
+        margin: 19px 20px 0;
+        width: 180px;
+        height: 250px;
+        border-radius: 10px;
+        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+      }
+
+      .movieTitle {
+        display: block;
+        margin: 11px 20px 12px;
+        text-align: left;
+        font-size: $font16;
+        font-weight: 900;
+        line-height: 23px;
+      }
+
+      dl {
+        display: grid;
+        grid-template-columns: 24px 65px;
+        gap: 5px;
+        margin: 0 20px 18px;
+        text-align: left;
+      }
+
+      dt {
+        color: $text-gray;
+
+        &:nth-child(5) {
+          grid-column: 1/2;
+        }
+      }
+
+      dd {
+        &:nth-child(2) {
+          grid-column: 2 / 4;
+        }
+
+        &:nth-child(4)::before {
+          content: '';
+          float: left;
+          margin-right: 4px;
+          margin-top: 3px;
+          width: 14px;
+          height: 14px;
+          background-image: url(../images/icon_star.png);
+          background-size: 14px;
+        }
+
+        &:nth-child(6) {
+          grid-column: 2 / span 4;
+        }
+
+        &:last-child {
+          grid-column: 2 / span 4;
+        }
+      }
+
+      .cont-btn {
+        border-top: 1px solid $border;
+        background-color: $bg-color;
+        line-height: 20px;
+
+        button {
+          border: none;
+          font-size: $font14;
+          font-weight: medium;
+          cursor: pointer;
+        }
+
+        .btn-ticket {
+          padding: 9px 0 12px 0;
+          border-right: 1px solid $border;
+          padding-right: 28px;
+        }
+
+        .btn-teaser {
+          padding: 9px 0 12px 0;
+
+          &::before {
+            content: '';
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-right: 2px;
+            margin-left: 24px;
+            background-image: url(../images/icon_play.png);
+            background-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 135px;
+  padding: 53px 366px 38px;
+  background-color: $bg-color;
+
+  img {
+    float: right;
+    width: 24px;
+    margin-left: 23px;
+  }
+
+  .tit-page {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .info {
+    width: 1189px;
+    margin-top: 42px;
+    padding-top: 36px;
+    border-top: 1px solid #C4C4C4;
+
+    strong {
+      font-weight: bold;
+    }
+
+    .txt-jungle {
+      float: right;
+    }
+  }
+}
