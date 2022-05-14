@@ -92,9 +92,9 @@ body {
 
       dl {
         display: grid;
-        grid-template-columns: 24px 65px;
+        grid-template-columns: 24px 73px;
         gap: 5px;
-        margin: 0 20px 18px;
+        margin: 0 14px 18px 19px;
         text-align: left;
       }
 
@@ -107,10 +107,6 @@ body {
       }
 
       dd {
-        &:nth-child(2) {
-          grid-column: 2 / 4;
-        }
-
         &:nth-child(4)::before {
           content: '';
           float: left;
@@ -132,33 +128,35 @@ body {
       }
 
       .cont-btn {
+        display: flex;
         border-top: 1px solid $border;
         background-color: $bg-color;
         line-height: 20px;
 
         button {
+          display: flex;
+          width: 50%;
           border: none;
+          justify-content: center;
           font-size: $font14;
           font-weight: medium;
           cursor: pointer;
         }
 
         .btn-ticket {
-          padding: 9px 0 12px 0;
+          padding: 12px 0;
           border-right: 1px solid $border;
-          padding-right: 28px;
         }
 
         .btn-teaser {
-          padding: 9px 0 12px 0;
+          padding: 12px 0;
 
           &::before {
             content: '';
-            float: left;
+            display: block;
             width: 16px;
             height: 16px;
             margin-right: 2px;
-            margin-left: 24px;
             background-image: url(../images/icon_play.png);
             background-size: 16px;
           }
